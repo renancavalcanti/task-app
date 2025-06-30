@@ -1,0 +1,18 @@
+<h2>SignUp</h2>
+<form (ngSubmit)="submit()">
+    <label>
+        Name
+        <input [(ngModel)] = "name" name="name" required/>
+    </label>
+    <label>
+        Email
+        <input [(ngModel)] = "email" name="email" required/>
+    </label>
+    <label>
+        Password
+        <input [(ngModel)] = "password" name="password" type="password" required/>
+    </label>
+
+    <button type="submit">Create</button>
+    <p>Already has account? <a href="/login">Login</a></p>
+</form>
