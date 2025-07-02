@@ -20,7 +20,10 @@ export class LoginComponent {
 
   submit(){
     this.auth.login(this.email, this.password).subscribe({
-      next: (res) => console.log(res),
+      next: (res) => {
+        this.auth.setToken(res.token)
+        this.router.navigate(['/tasks'])
+      },
       error: (res) => alert(res.error.error)
     })
   }

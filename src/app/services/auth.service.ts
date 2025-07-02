@@ -30,5 +30,13 @@ export class AuthService {
     return this.http.post<any>("https://task-api-zxn6x.ondigitalocean.app/v1/users/login", data)
   }
 
+  setToken(token: string){
+    localStorage.setItem('token', token)
+  }
 
+  getToken(): string | null{
+      return localStorage.getItem('token');
+  }
+
+  
 }

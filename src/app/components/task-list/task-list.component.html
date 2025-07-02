@@ -1,0 +1,36 @@
+<div class="header">
+    <button>Logout</button>
+    <a class="create-link" href="#"> + New Task</a>
+</div>
+
+<section>
+    <h2>Tasks Created</h2>
+    <div class="task-list">
+        <div *ngFor="let t of createdByTasks" class="task-card">
+            <div class="task-content">
+                <p><strong>{{t.description}}</strong></p>
+                <small>Assigned To: {{t.assignedToName}}</small><br>
+                <small>Status: {{t.done ? 'Done' : 'Pending'}}</small>
+            </div>
+            <div class="task-actions">
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <h2>Tasks Assigned</h2>
+    <div class="task-list">
+        <div *ngFor="let t of assignedToTasks" class="task-card">
+            <div class="task-content">
+                <p><strong>{{t.description}}</strong></p>
+                <small>Created By: {{t.createdByName}}</small><br>
+                <small>Status: {{t.done ? 'Done' : 'Pending'}}</small>
+            </div>
+            <div class="task-actions">
+
+            </div>
+        </div>
+    </div>
+</section>
